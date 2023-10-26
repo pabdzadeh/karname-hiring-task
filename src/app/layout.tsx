@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fa">
+    <html lang="fa" dir="rtl">
       <QueryProvider>
         <body className="font-yekan">{children}</body>
       </QueryProvider>
