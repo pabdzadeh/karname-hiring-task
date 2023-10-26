@@ -18,10 +18,15 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #F7F8F9;
+}
+
+.shadow {
+  box-shadow: 0px 3px 50px -1px rgba(50, 50, 71, 0.05);
+}
+
+@font-face {
+  font-family: "IRANYekanX VF";
+  src: url("../../public/fonts/IRANYekanXVF.woff") format("woff-variations");
+  font-display: fallback
 }
