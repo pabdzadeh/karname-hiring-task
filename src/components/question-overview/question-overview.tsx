@@ -45,10 +45,14 @@ const QuestionOverview: React.FC<Props> = ({ question, type }: Props) => {
             </span>
           </div>
         </MuiAccordionSummary>
-        <MuiAccordionDetails className={clsx("bg-[#F9F9F9] rounded-b-lg h-[107px]", {
+        <MuiAccordionDetails className={clsx("bg-[#F9F9F9] rounded-b-lg h-[107px] pt-4 flex flex-col", {
           '!h-[215px]': type === 'large'
         })} >
-          {question?.body}
+          <span className={clsx('text-justify', {
+            'truncate': type !== 'large'
+          })}>
+            {question?.body}
+          </span>
           <div className="mt-4 flex justify-end">
             {type !== 'large' && question && <QuestionDetailsButton questionId={question.id} question={question} />}
           </div>
