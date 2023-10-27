@@ -2,3 +2,8 @@ export { default as TopBar } from './top-bar/top-bar';
 export { default as UserProfile } from './user-profile/user-profile';
 export { default as QuestionsList } from './questions-list/questions-list';
 export { default as QuestionOverview } from './question-overview/question-overview';
+export { default as QuestionDetailsButton } from './question-details-button/question-details-button';
+export { default as AnswersList } from './answers-list/answers-list';
+export { default as LikeDislikeButtons } from './like-dislike-buttons/like-dislike-buttons';
+export { default as AddAnswer } from './add-answer/add-answer';
+export { default as TotalAnswersNumber } from './total-answers-number/total-answers-number';

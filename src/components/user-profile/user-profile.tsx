@@ -6,11 +6,11 @@ import { useQuery } from "react-query";
 
 type Props = {
   userId: string;
-  type?: 'mini' | 'normal'
+  type?: 'mini' | 'normal' | 'answer';
 }
 
 const UserProfile: React.FC<Props> = ({ userId, type = 'normal' }: Props) => {
-  const { isLoading, error, data } = useQuery('profileData', () =>
+  const { isLoading, error, data } = useQuery(`profileData-${userId}`, () =>
     fetch(`https://json-server-karname.vercel.app/profiles/${userId}/`).then(res =>
       res.json()
     )
@@ -21,12 +21,13 @@ const UserProfile: React.FC<Props> = ({ userId, type = 'normal' }: Props) => {
   }
 
   return (
-    <div className="flex flex-row items-center gap-3 font-bold ">
+    <div className="flex flex-row items-center gap-3 font-bold">
       <Image alt={data?.name} src={data?.image}
-        width={type === 'mini' ? 32 : 44}
-        height={type === 'mini' ? 32 : 44}
+        objectFit="contain"
+        width={type !== 'normal' ? 32 : 44}
+        height={type !== 'normal' ? 32 : 44}
         className={clsx("rounded-full", {
-          '!rounded-md': type === 'mini'
+          '!rounded-md': type !== 'normal'
         })}>
 
       </Image>

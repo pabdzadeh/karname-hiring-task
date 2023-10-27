@@ -23,8 +23,8 @@ const AddQuestion: React.FC<{}> = () => {
       <Button
         type="button"
         onClick={handleOpenModal}
-        className="font-yekan bg-karnameh text-white py-2 gap-2 px-[21px] rounded-md text-xs hover:bg-main ml-10"
-        startIcon={<AddIcon />}
+        className="flex font-yekan bg-karnameh text-white py-2 gap-2 px-[20px] rounded-md text-xs hover:bg-main ml-10"
+        startIcon={<AddIcon className="mr-[-5px]" />}
       >
         سوال جدید
       </Button>
