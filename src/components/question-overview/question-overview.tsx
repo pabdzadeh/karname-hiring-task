@@ -31,7 +31,7 @@ const QuestionOverview: React.FC<Props> = ({ question, type }: Props) => {
               {question?.time}
             </span>
           </div>
-          <div className=" h-6 w-[1px] bg-[black] bg-opacity-10" />
+          <div className="mt-1 h-6 w-[1px] bg-[black] bg-opacity-10" />
           <div className="text-xs pr-3 flex gap-1 items-center ml-7">
             <span className="text-[#777]">
               تاریخ:
