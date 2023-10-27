@@ -1,6 +1,7 @@
 import { useAddQuestion } from "@/api-hooks/useAddQuestion";
 import { CloseIcon } from "@/icons";
 import { Box, Button, Input, Modal, Snackbar, TextField } from "@mui/material";
+import { useRouter } from "next/navigation";
 import { MouseEventHandler, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { MutationKey, useMutation, useQueryClient } from "react-query";
@@ -35,6 +36,8 @@ const AddQuestionModal: React.FC<Props> = ({ open, handleClose }: Props) => {
     handleClose?.(event, 'backdropClick');
   }
 
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -47,6 +50,7 @@ const AddQuestionModal: React.FC<Props> = ({ open, handleClose }: Props) => {
   const onAddSuccess = () => {
     handleClose?.({}, 'backdropClick');
     setSuccess(true);
+    router.push('/');
   }
 
   const onNotificationClose = () => {

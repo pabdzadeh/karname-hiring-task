@@ -1,7 +1,7 @@
-import { AddIcon } from "@/icons";
-import { Button } from "@mui/material";
+import { ArrowIcon } from "@/icons";
 import { UserProfile } from "..";
 import AddQuestion from "../add-question/add-question";
+import TopMenu from "../top-menu/top-menu";
 
 interface Props {
   title: string;
@@ -18,6 +18,7 @@ const TopBar: React.FC<Props> = ({ title }: Props) => {
       <AddQuestion />
 
       <UserProfile userId="1" />
+      <TopMenu />
     </div>
   );
 }
