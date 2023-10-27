@@ -32,8 +32,13 @@ const style = {
 
 const AddQuestionModal: React.FC<Props> = ({ open, handleClose }: Props) => {
   const onClose: MouseEventHandler<HTMLButtonElement> = (event) => {
+    reset({
+      body: '',
+      title: ''
+    });
     handleClose?.(event, 'backdropClick');
   }
+
 
   const router = useRouter();
 
@@ -77,7 +82,7 @@ const AddQuestionModal: React.FC<Props> = ({ open, handleClose }: Props) => {
 
   return (
     <>
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={open} onClose={onClose}>
         <Box sx={style}>
           <div className="flex flex-col gap-5">
             <div className="flex flex-row h-12 justify-between bg-white w-full text-base font-extrabold items-center shadow rounded-md px-6">
