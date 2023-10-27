@@ -51,7 +51,8 @@ const AddAnswer: React.FC<Props> = ({ questionId }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="px-14 w-full mt-4 mb-10">
+      <form onSubmit={handleSubmit(onSubmit)} className="px-14 w-full mt-4 mb-10 flex flex-col">
+        <span className="text-xs mb-2">پاسخ خود را بنویسید</span>
         <div>
           <textarea {...register("body", { required: 'متن پاسخ نمی تواند خالی باشد' })}
             className="w-full h-[164px] border-[#EEEEEE] border rounded-md px-4 text-sm py-3 resize-none" />
