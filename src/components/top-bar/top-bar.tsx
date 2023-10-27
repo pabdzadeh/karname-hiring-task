@@ -1,9 +1,8 @@
-import { ArrowIcon } from "@/icons";
 import { UserProfile } from "..";
 import AddQuestion from "../add-question/add-question";
 import TopMenu from "../top-menu/top-menu";
 
-interface Props {
+type Props = {
   title: string;
 }
 
