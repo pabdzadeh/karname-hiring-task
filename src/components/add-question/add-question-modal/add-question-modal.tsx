@@ -1,10 +1,9 @@
 import { useAddQuestion } from "@/api-hooks/useAddQuestion";
 import { CloseIcon } from "@/icons";
-import { Box, Button, Input, Modal, Snackbar, TextField } from "@mui/material";
+import { Box, Button, Modal, Snackbar } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { MouseEventHandler, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { MutationKey, useMutation, useQueryClient } from "react-query";
 
 type Props = {
   open: boolean;
@@ -42,6 +41,7 @@ const AddQuestionModal: React.FC<Props> = ({ open, handleClose }: Props) => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -50,6 +50,10 @@ const AddQuestionModal: React.FC<Props> = ({ open, handleClose }: Props) => {
   const onAddSuccess = () => {
     handleClose?.({}, 'backdropClick');
     setSuccess(true);
+    reset({
+      body: '',
+      title: ''
+    });
     router.push('/');
   }
 
