@@ -46,8 +46,8 @@ const AnswerCard: React.FC<Props> = ({ answer }) => {
             </span>
           </div>
         </MuiAccordionSummary>
-        <MuiAccordionDetails className="bg-[#F9F9F9] rounded-b-lg h-[107px] flex flex-col">
-          {answer?.body}
+        <MuiAccordionDetails className="bg-[#F9F9F9] rounded-b-lg min-h-[107px] flex flex-col py-4">
+          <span>{answer?.body}</span>
           <div className="mt-auto flex justify-end">
             {answer && <LikeDislikeButtons answer={answer} />}
           </div>
