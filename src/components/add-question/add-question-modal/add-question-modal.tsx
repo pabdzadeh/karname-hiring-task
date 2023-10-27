@@ -62,9 +62,11 @@ const AddQuestionModal: React.FC<Props> = ({ open, handleClose }: Props) => {
   const onSubmit: SubmitHandler<Inputs> = (data) => addQuestion({
     title: data?.title,
     body: data?.body,
-    author: 1,
+    author: '1',
     id: Math.random().toString(16).slice(2),
-    totalAnswers: 0
+    totalAnswers: 0,
+    date: new Intl.DateTimeFormat('fa-IR').format(new Date()),
+    time: new Intl.DateTimeFormat('fa-IR', { timeStyle: 'short' }).format(new Date()),
   });
 
 

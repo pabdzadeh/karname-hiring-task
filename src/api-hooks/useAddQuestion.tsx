@@ -26,7 +26,7 @@ export const useAddQuestion = ({ onSuccess, onError }: Props) => {
 
   const { mutate: addQuestion, isLoading, error } = useMutation(postQuestion, {
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['questions'] });
+      queryClient.invalidateQueries({ queryKey: 'questions' });
       onSuccess?.();
     },
     onError: (error) => {

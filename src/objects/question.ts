@@ -3,5 +3,7 @@ export type Question = {
   body: string;
   id?: string;
   totalAnswers?: number;
-  author: number;
+  author: string;
+  date?: string;
+  time?: string;
 }
