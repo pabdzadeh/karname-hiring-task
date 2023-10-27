@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project for Karnameh recruiting process. 
+This is a [Next.js](https://nextjs.org/) project for [Karnameh](https://karnameh.com/) recruiting process. 
 
 The design is accessible here: [https://www.figma.com/file/cuXoYkQzy4XawkLAdpAtDA/QA---Karnameh?node-id=4%3A485&mode=dev](https://www.figma.com/file/cuXoYkQzy4XawkLAdpAtDA/QA---Karnameh?node-id=4%3A485&mode=dev).
 
