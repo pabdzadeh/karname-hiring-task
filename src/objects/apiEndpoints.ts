@@ -1,2 +1,2 @@
-export const baseUrl = 'https://json-server-karname.vercel.app/';
+export const baseUrl = 'https://veiled-ninth-iguana.glitch.me/';
 // export const baseUrl = 'http://localhost:3001/';
