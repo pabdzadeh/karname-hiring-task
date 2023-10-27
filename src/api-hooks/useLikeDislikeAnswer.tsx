@@ -1,8 +1,9 @@
+import { baseUrl } from "@/objects/apiEndpoints";
 import { useMutation, useQueryClient } from "react-query";
 
 const patchLikeDislike = async ({ data, answerId }: { data: { likes: string[], dislikes: string[] }, answerId: string })
   : Promise<any> => {
-  const response = await fetch(`https://json-server-karname.vercel.app/answers/${answerId}`, {
+  const response = await fetch(`${baseUrl}answers/${answerId}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',

@@ -1,8 +1,9 @@
 import { Answer } from "@/objects/answer";
+import { baseUrl } from "@/objects/apiEndpoints";
 import { useMutation, useQueryClient } from "react-query";
 
 const postAnswer = async (data: Answer): Promise<any> => {
-  const response = await fetch('https://json-server-karname.vercel.app/answers/', {
+  const response = await fetch(`${baseUrl}answers/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

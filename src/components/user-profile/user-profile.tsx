@@ -1,5 +1,6 @@
 'use client';
 
+import { baseUrl } from "@/objects/apiEndpoints";
 import clsx from "clsx";
 import Image from "next/image";
 import { useQuery } from "react-query";
@@ -10,8 +11,8 @@ type Props = {
 }
 
 const UserProfile: React.FC<Props> = ({ userId, type = 'normal' }: Props) => {
-  const { isLoading, error, data } = useQuery(`profileData-${userId}`, () =>
-    fetch(`https://json-server-karname.vercel.app/profiles/${userId}/`).then(res =>
+  const { isLoading, data } = useQuery(`profileData-${userId}`, () =>
+    fetch(`${baseUrl}profiles/${userId}/`).then(res =>
       res.json()
     )
   );

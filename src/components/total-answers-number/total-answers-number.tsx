@@ -1,6 +1,7 @@
 'use client';
 
 import { Answer } from "@/objects/answer";
+import { baseUrl } from "@/objects/apiEndpoints";
 import { useQuery } from "react-query";
 
 type Props = {
@@ -8,8 +9,8 @@ type Props = {
 }
 
 const TotalAnswersNumber: React.FC<Props> = ({ questionId }) => {
-  const { isLoading, error, data } = useQuery<Answer[]>(`answers-${questionId}`, () =>
-    fetch(`https://json-server-karname.vercel.app/answers?questionId=${questionId}`).then(res =>
+  const { data } = useQuery<Answer[]>(`answers-${questionId}`, () =>
+    fetch(`${baseUrl}answers?questionId=${questionId}`).then(res =>
       res.json()
     )
   );
