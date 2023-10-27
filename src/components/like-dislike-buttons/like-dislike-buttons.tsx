@@ -16,15 +16,10 @@ const LikeDislikeButtons: React.FC<Props> = ({ answer }) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
   const [isDisliked, setIsDisliked] = useState<boolean>(false);
 
-  const onSuccess = () => {
-
-  }
-
-  const onError = () => {
-
-  }
-
-  const { likeDislikeAnswer } = useLikeDislikeAnswer({ onSuccess, onError, questionId: answer.questionId });
+  const { likeDislikeAnswer } = useLikeDislikeAnswer({
+    onSuccess: () => { }, onError: () => { },
+    questionId: answer.questionId
+  });
 
   const onLikeToggle = () => {
     if (isLiked) {
@@ -74,7 +69,6 @@ const LikeDislikeButtons: React.FC<Props> = ({ answer }) => {
 
 
   useEffect(() => {
-    console.log(answer?.dislikes?.includes('1'))
     setIsLiked(answer?.likes?.includes('1') || false);
     setIsDisliked(answer?.dislikes?.includes('1') || false);
   }, [answer])

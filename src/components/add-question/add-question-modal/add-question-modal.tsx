@@ -61,11 +61,7 @@ const AddQuestionModal: React.FC<Props> = ({ open, handleClose }: Props) => {
     setSuccess(false);
   }
 
-  const onAddError = () => {
-    console.log('error');
-  }
-
-  const { addQuestion } = useAddQuestion({ onSuccess: onAddSuccess, onError: onAddError });
+  const { addQuestion } = useAddQuestion({ onSuccess: onAddSuccess, onError: () => { } });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => addQuestion({
     title: data?.title,
