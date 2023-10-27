@@ -31,7 +31,7 @@ const TopMenu: React.FC<{}> = () => {
         <ArrowIcon />
       </Button>
       <Menu open={open} anchorEl={anchorEl} onClose={onClose}>
-        <MenuItem onClick={onHomeClick}>خانه</MenuItem>
+        <MenuItem onClick={onHomeClick} className="font-yekan">خانه</MenuItem>
       </Menu>
     </div>
   );
